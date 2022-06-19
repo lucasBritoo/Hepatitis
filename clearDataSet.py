@@ -12,14 +12,13 @@ def main():
           'ALK PHOSPHATE','SGOT','ALBUMIN','PROTIME','HISTOLOGY']
   TARGET = 'CLASS'  
 
-                            # Faz a leitura do arquivo
-  df = pd.read_csv(
-        CAMINHO_DATASET,    # Nome do arquivo com dados
-        names=NAMES,        # Nome das colunas
-        usecols=FEATURES,   # Define as colunas que serão  utilizadas
-        na_values="?")      # Define que ? será considerado valores ausentes
+                            
+  df = pd.read_csv(CAMINHO_DATASET,    # Nome do arquivo com dados
+									 names=NAMES,        # Nome das colunas
+									 usecols=FEATURES,   # Define as colunas que serão  utilizadas
+									 na_values="?")      # Define que ? será considerado valores ausentes
 
-  df_class = pd.read_csv(CAMINHO_DATASET, # Nome do arquivo com dados
+  df_class = pd.read_csv(CAMINHO_DATASET,   # Nome do arquivo com dados
                           names=NAMES)      # Nome das colunas
 
   def UpdateMissingValues(df, column, method="mode", number=0):
